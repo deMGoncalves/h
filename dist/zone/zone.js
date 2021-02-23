@@ -19,8 +19,9 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 };
 var _className, _offScreen, _slot;
 var _a;
-import * as d from "../dunders/index";
 import * as f from 'f';
+import lazyLoad from 'lazyload';
+import * as d from "../dunders/index";
 import paint from "../paint/index";
 import repaint from "../repaint/index";
 import component from "./component";
@@ -33,7 +34,7 @@ let Zone = class Zone {
         __classPrivateFieldSet(this, _className, props.className);
         __classPrivateFieldSet(this, _slot, props.slot);
         __classPrivateFieldSet(this, _offScreen, f.T());
-        setTimeout(() => f.lazyLoad(this[d.__element__], () => this[render]()));
+        setTimeout(() => lazyLoad(this[d.__element__], () => this[render]()));
         return this;
     }
     get className() {
