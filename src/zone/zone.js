@@ -1,5 +1,6 @@
-import * as d from '@/dunders'
 import * as f from 'f'
+import lazyLoad from 'lazyload'
+import * as d from '@/dunders'
 import paint from '@/paint'
 import repaint from '@/repaint'
 import component from './component'
@@ -30,7 +31,7 @@ class Zone {
     this.#offScreen = f.T()
 
     setTimeout(() =>
-      f.lazyLoad(this[d.__element__], () => this[render]()))
+      lazyLoad(this[d.__element__], () => this[render]()))
 
     return this
   }
