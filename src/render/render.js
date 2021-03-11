@@ -1,4 +1,3 @@
-import h from '@/h'
 import * as f from 'f'
 
 const render = (node, ...children) =>
