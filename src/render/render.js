@@ -1,6 +1,7 @@
+import h from '@/h'
 import * as f from 'f'
 
-const render = async (node, ...children) =>
-  node.append(...(await Promise.all(children)))
+const render = (node, ...children) =>
+  node.append(...children)
 
 export default f.curry(f.arity(2, f.frame(render)))
