@@ -1,7 +1,7 @@
-export default (name, props, children) => (
+export default (tagName, props, children) => (
   {
     get tagName () {
-      return name
+      return tagName
     },
 
     get attributes () {
