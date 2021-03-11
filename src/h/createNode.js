@@ -1,6 +1,15 @@
-import * as f from 'f'
-import extendAttributes from '@/extendAttributes'
-import appendChildren from './appendChildren'
+export default (name, props, children) => (
+  {
+    get tagName () {
+      return name
+    },
 
-export default (tagName, props, children) =>
-  f.compose(appendChildren(children), extendAttributes(props))(document.createElement(tagName, { is: props.is }))
+    get attributes () {
+      return props
+    },
+
+    get children () {
+      return children
+    }
+  }
+)
