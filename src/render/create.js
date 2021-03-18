@@ -1,8 +1,10 @@
 import * as f from 'f'
 import createNode from './createNode'
 import createText from './createText'
+import isNode from './isNode'
+import isText from './isText'
 
 export default f.cond(
-  [f.is(Object), createNode],
-  [f.is(String), createText]
+  [isNode, createNode],
+  [isText, createText]
 )
