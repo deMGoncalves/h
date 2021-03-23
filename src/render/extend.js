@@ -1,13 +1,13 @@
 import * as f from 'f'
 import isAttribute from './isAttribute'
 import isClassName from './isClassName'
-import isForHtml from './isForHtml'
+import isHtmlFor from './isHtmlFor'
 import setAttribute from './setAttribute'
 import setClassName from './setClassName'
-import setForHtml from './setForHtml'
+import setHtmlFor from './setHtmlFor'
 
 export default f.cond(
   [isClassName, setClassName],
-  [isForHtml, setForHtml],
+  [isHtmlFor, setHtmlFor],
   [isAttribute, setAttribute]
 )

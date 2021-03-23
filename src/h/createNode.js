@@ -1,3 +1,5 @@
+import * as f from 'f'
+
 export default (tagName, props, children) => (
   {
     get tagName () {
@@ -5,7 +7,7 @@ export default (tagName, props, children) => (
     },
 
     get attributes () {
-      return props
+      return f.toPairs(props)
     },
 
     get children () {
