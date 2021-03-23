@@ -1,12 +1,15 @@
 import * as f from 'f';
 export default (tagName, props, children) => ({
-    get tagName() {
-        return tagName;
-    },
     get attributes() {
-        return f.toPairs(props);
+        return f.filter(f.toPairs(props), f.compose(f.not, f.test(/^on/), f.prop('[0]')));
     },
     get children() {
         return children;
+    },
+    get events() {
+        return f.filter(f.toPairs(props), f.compose(f.test(/^on/), f.prop('[0]')));
+    },
+    get tagName() {
+        return tagName;
     }
 });
