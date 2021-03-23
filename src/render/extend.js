@@ -6,8 +6,11 @@ import setAttribute from './setAttribute'
 import setClassName from './setClassName'
 import setHtmlFor from './setHtmlFor'
 
-export default f.cond(
-  [isClassName, setClassName],
-  [isHtmlFor, setHtmlFor],
-  [isAttribute, setAttribute]
-)
+const extend = (parent, args) =>
+  f.cond(
+    [isClassName, setClassName],
+    [isHtmlFor, setHtmlFor],
+    [isAttribute, setAttribute]
+  )(...args, parent)
+
+export default f.curry(extend)
