@@ -1,13 +1,13 @@
 import * as f from 'f'
-import addEventListener from './addEventListener'
 import isAttribute from './isAttribute'
 import isClassName from './isClassName'
-import isEvent from './isEvent'
+import isForHtml from './isForHtml'
 import setAttribute from './setAttribute'
 import setClassName from './setClassName'
+import setForHtml from './setForHtml'
 
 export default f.cond(
-  [isAttribute, setAttribute],
   [isClassName, setClassName],
-  [isEvent, addEventListener]
+  [isForHtml, setForHtml],
+  [isAttribute, setAttribute]
 )
