@@ -6,11 +6,11 @@ import setAttribute from './setAttribute'
 import setClassName from './setClassName'
 import setHtmlFor from './setHtmlFor'
 
-const attributesMapper = (parent, args) =>
+const attributeMapper = (parent, args) =>
   f.cond(
     [isClassName, setClassName],
     [isHtmlFor, setHtmlFor],
     [isAttribute, setAttribute]
   )(...args, parent)
 
-export default f.curry(attributesMapper)
+export default f.curry(attributeMapper)

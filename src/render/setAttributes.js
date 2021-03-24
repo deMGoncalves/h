@@ -1,7 +1,7 @@
 import * as f from 'f'
-import attributesMapper from './attributesMapper'
+import attributeMapper from './attributeMapper'
 
 const setAttibutes = (descriptor, parent) =>
-  f.always(parent)(f.forEach(descriptor.attributes, attributesMapper(parent)))
+  f.always(parent)(f.forEach(descriptor.attributes, attributeMapper(parent)))
 
 export default f.curry(setAttibutes)
