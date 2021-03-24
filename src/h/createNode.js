@@ -14,6 +14,10 @@ export default (tagName, props, children) => (
       return f.filter(f.toPairs(props), f.compose(f.test(/^on/), f.prop('[0]')))
     },
 
+    get slot () {
+      return props.slot
+    },
+
     get tagName () {
       return tagName
     }
