@@ -1,13 +1,15 @@
-import * as f from 'f';
+import filter from "./filter";
+import onlyEvents from "./onlyEvents";
+import onlyAttributes from "./onlyAttributes";
 export default (tagName, props, children) => ({
     get attributes() {
-        return f.filter(f.toPairs(props), f.compose(f.not, f.test(/^on/), f.prop('[0]')));
+        return filter(props, onlyAttributes);
     },
     get children() {
         return children;
     },
     get events() {
-        return f.filter(f.toPairs(props), f.compose(f.test(/^on/), f.prop('[0]')));
+        return filter(props, onlyEvents);
     },
     get slot() {
         return props.slot;
