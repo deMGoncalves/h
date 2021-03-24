@@ -11,6 +11,9 @@ export default (tagName, props, children) => ({
     get events() {
         return filter(props, onlyEvents);
     },
+    get is() {
+        return props.is;
+    },
     get slot() {
         return props.slot;
     },

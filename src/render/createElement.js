@@ -1,2 +1,2 @@
 export default (descriptor) =>
-  document.createElement(descriptor.tagName, { is: descriptor.attributes.is })
+  document.createElement(descriptor.tagName, { is: descriptor.is })
