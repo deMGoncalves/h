@@ -1,6 +1,7 @@
 import filter from './filter'
 import onlyEvents from './onlyEvents'
 import onlyAttributes from './onlyAttributes'
+import textMapper from './textMapper'
 
 export default (tagName, attributes, children) => (
   {
@@ -9,7 +10,7 @@ export default (tagName, attributes, children) => (
     },
     
     get children () {
-      return children
+      return textMapper(children)
     },
 
     get events () {

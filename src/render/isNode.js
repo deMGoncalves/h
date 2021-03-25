@@ -1,3 +1,3 @@
 import * as f from 'f'
 
-export default f.is(Object)
+export default f.has('children')

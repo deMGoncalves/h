@@ -1,2 +1,2 @@
-export default (text) =>
-  document.createTextNode(text)
+export default (descriptor) =>
+  document.createTextNode(descriptor.textContent)

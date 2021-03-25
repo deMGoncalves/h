@@ -1,12 +1,13 @@
 import filter from "./filter";
 import onlyEvents from "./onlyEvents";
 import onlyAttributes from "./onlyAttributes";
+import textMapper from "./textMapper";
 export default (tagName, attributes, children) => ({
     get attributes() {
         return filter(attributes, onlyAttributes);
     },
     get children() {
-        return children;
+        return textMapper(children);
     },
     get events() {
         return filter(attributes, onlyEvents);

@@ -1,4 +1,3 @@
-import * as f from 'f';
 import appendChild from "./appendChild";
 import doNothing from "./doNothing";
 import nodesAreDifferent from "./nodesAreDifferent";
@@ -26,4 +25,4 @@ export default f.cond(
   [f.T, replaceNode]
 )
 */
-export default (node, vNode) => console.log(f.equal(node.__id__, vNode.__id__));
+export default (node, vNode) => console.log(node, vNode);
