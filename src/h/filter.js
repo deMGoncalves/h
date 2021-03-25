@@ -1,4 +1,4 @@
 import * as f from 'f'
 
-export default (props, predicate) =>
-  f.filter(f.toPairs(props), predicate)
+export default (attributes, predicate) =>
+  f.filter(f.toPairs(attributes), predicate)
