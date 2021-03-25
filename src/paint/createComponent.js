@@ -1,5 +1,9 @@
 import * as f from 'f'
-import * as d from '@/dunders'
+import executeComponent from './executeComponent'
+import executeComponentAndActivate from './executeComponentAndActivate'
+import isPristine from './isPristine'
 
-export default (instance, component, children) =>
-  f.assign(component(instance, children), { [d.__klass__]: instance })
+export default f.cond(
+  [isPristine, executeComponentAndActivate],
+  [f.T, executeComponent]
+)

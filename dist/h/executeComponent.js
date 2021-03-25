@@ -1,2 +1,2 @@
 import slot from "../slot/index";
-export default (functionRef, attributes, children) => functionRef(attributes, slot(children));
+export default (componentRef, attributes, children) => componentRef(attributes, slot(children));

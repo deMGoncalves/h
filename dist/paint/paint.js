@@ -1,11 +1,11 @@
 import * as f from 'f';
-import onComponent from "./onComponent";
-import onObject from "./onObject";
-export default (component) => (Klass) => new Proxy(function (props, children) {
-    return (this instanceof Klass)
-        ? onObject(new Klass(...arguments), component)
-        : onComponent(new Klass(Object.assign({}, props)), component, children);
+import createComponent from "./createComponent";
+import createEntity from "./createEntity";
+export default (componentRef) => (Entity) => new Proxy(function (attributes, children) {
+    return (this instanceof Entity)
+        ? createEntity(componentRef, new Entity(...arguments))
+        : createComponent(componentRef, new Entity(Object.assign({}, attributes)), children);
 }, {
-    get: (_, key) => Klass[key],
-    set: (_, key, value) => f.T(Klass[key] = value)
+    get: (_, key) => Entity[key],
+    set: (_, key, value) => f.T(Entity[key] = value)
 });
