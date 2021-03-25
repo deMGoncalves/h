@@ -19,5 +19,6 @@ export default (tagName, attributes, children) => ({
     },
     get tagName() {
         return tagName;
-    }
+    },
+    __id__: Symbol()
 });

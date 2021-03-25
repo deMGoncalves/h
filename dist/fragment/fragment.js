@@ -10,5 +10,6 @@ export default (attributes, children) => ({
     },
     get slot() {
         return attributes.slot;
-    }
+    },
+    __id__: Symbol()
 });

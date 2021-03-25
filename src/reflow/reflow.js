@@ -28,4 +28,5 @@ export default f.cond(
 )
 */
 
-export default (...args) => console.log(...args)
+export default (node, vNode) =>
+  console.log(f.equal(node.__id__, vNode.__id__))
