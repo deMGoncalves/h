@@ -1,2 +1,4 @@
 export default (descriptor) =>
-  document.createElement(descriptor.tagName, { is: descriptor.is })
+  descriptor.tagName
+    ? document.createElement(descriptor.tagName, { is: descriptor.is })
+    : document.createDocumentFragment()

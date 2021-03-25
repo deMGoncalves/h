@@ -1,6 +1,19 @@
-import * as f from 'f'
-import appendChildren from '@/h/appendChildren'
-import extendAttributes from './extendAttributes'
+export default (attributes, children) => (
+  {
+    get attributes () {
+      return []
+    },
 
-export default (props, children) =>
-  appendChildren(f.flatten(children), extendAttributes(props, document.createDocumentFragment()))
+    get children () {
+      return children
+    },
+
+    get events () {
+      return []
+    },
+
+    get slot () {
+      return attributes.slot
+    }
+  }
+)
