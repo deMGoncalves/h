@@ -15,6 +15,7 @@ import replaceNode from './replaceNode'
 import sameObject from './sameObject'
 import setTextContent from './setTextContent'
 
+/*
 export default f.cond(
   [notHasNode, appendChild],
   [notHasVNode, remove],
@@ -25,3 +26,6 @@ export default f.cond(
   [nodesIsCustomTag, restrictAttributes],
   [f.T, replaceNode]
 )
+*/
+
+export default (...args) => console.log(...args)

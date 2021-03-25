@@ -1,7 +1,7 @@
 import * as f from 'f'
-import * as d from '@/dunders'
 
-export default (mathod) =>
+export default (method) => (
   function () {
-    return f.always(mathod.call(this, ...arguments))(this[d.__reflow__] && this[d.__reflow__]())
+    return f.always(method.call(this, ...arguments))(f.or(this['__reflow__'], f.always(undefined))())
   }
+)

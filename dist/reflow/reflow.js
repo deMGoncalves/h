@@ -1,4 +1,3 @@
-import * as f from 'f';
 import appendChild from "./appendChild";
 import doNothing from "./doNothing";
 import nodesAreDifferent from "./nodesAreDifferent";
@@ -14,4 +13,16 @@ import restrictAttributes from "./restrictAttributes";
 import replaceNode from "./replaceNode";
 import sameObject from "./sameObject";
 import setTextContent from "./setTextContent";
-export default f.cond([notHasNode, appendChild], [notHasVNode, remove], [nodesIsText, setTextContent], [nodesAreDifferent, replaceChild], [sameObject, doNothing], [otherObject, replaceComponent], [nodesIsCustomTag, restrictAttributes], [f.T, replaceNode]);
+/*
+export default f.cond(
+  [notHasNode, appendChild],
+  [notHasVNode, remove],
+  [nodesIsText, setTextContent],
+  [nodesAreDifferent, replaceChild],
+  [sameObject, doNothing],
+  [otherObject, replaceComponent],
+  [nodesIsCustomTag, restrictAttributes],
+  [f.T, replaceNode]
+)
+*/
+export default (...args) => console.log(...args);
