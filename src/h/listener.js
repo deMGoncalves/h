@@ -1,22 +1,22 @@
 import * as f from 'f'
 
 class Listener {
+  #handler
   #name
   #parent
-  #value
+  
+  get handler () {
+    return this.#handler
+  }
 
   get name () {
     return this.#name
-  }
+  }    
 
-  get value () {
-    return this.#value
-  }
-
-  constructor (name, value, parent) {
+  constructor (name, handler, parent) {
+    this.#handler = handler
     this.#name = name
     this.#parent = parent
-    this.#value = value
   }
 
   static create (props, parent) {
