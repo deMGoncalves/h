@@ -1,3 +1,5 @@
+import * as f from 'f'
+
 class Attribute {
   #key
   #parent
@@ -18,10 +20,13 @@ class Attribute {
   }
 
   static create (props, parent) {
-    return Object
-      .entries(props)
-      .filter(([key]) => !/^(on\S+|is|slot)$/i.test(key))
-      .map(([key, value]) => new Attribute(key, value, parent))
+    return f.map(
+      f.filter(
+        f.toPairs(props),
+        f.compose(f.not, f.test(/^(on\S+|is|slot)$/), f.prop('[0]'))
+      ),
+      (args) => new Attribute(...args, parent)
+    )
   }
 }
 
