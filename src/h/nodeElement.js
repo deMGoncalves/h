@@ -20,6 +20,10 @@ class NodeElement {
     return this.#children
   }
 
+  get id () {
+    return this.#id
+  }
+
   get listeners () {
     return this.#listeners
   }
