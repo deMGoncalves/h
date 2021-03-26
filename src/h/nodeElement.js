@@ -1,3 +1,4 @@
+import * as f from 'f'
 import Attribute from './attribute'
 import Child from './child'
 import Listener from './listener'
@@ -45,6 +46,10 @@ class NodeElement {
 
   static create (tagName, props, children) {
     return new NodeElement (tagName, props, children)
+  }
+  
+  static is (tagNameOrComponent) {
+    return f.is(String, tagNameOrComponent)
   }
 }
 
