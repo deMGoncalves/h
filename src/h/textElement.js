@@ -5,6 +5,10 @@ class TextElement {
   #parent
   #textContent
 
+  get id () {
+    return this.#id
+  }
+
   get textContent () {
     return this.#textContent
   }
