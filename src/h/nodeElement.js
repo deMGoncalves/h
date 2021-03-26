@@ -9,6 +9,7 @@ class NodeElement {
   #listeners
   #id
   #parent
+  #slot
   #tagName
 
   get attributes () {
@@ -27,6 +28,10 @@ class NodeElement {
     return this.#id
   }
 
+  get slot () {
+    return this.#slot
+  }
+
   get tagName () {
     return this.#tagName
   }
@@ -37,6 +42,7 @@ class NodeElement {
     this.#listeners = Listener.create(props, this)
     this.#id = Symbol()
     this.#parent = {}
+    this.#slot = props.slot
     this.#tagName = tagName
   }
 

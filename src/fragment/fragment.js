@@ -1,21 +1,37 @@
-export default (attributes, children) => (
-  {
-    get attributes () {
-      return []
-    },
+class Fragment {
+  #children
+  #id
+  #slot
 
-    get children () {
-      return children
-    },
-
-    get events () {
-      return []
-    },
-
-    get slot () {
-      return attributes.slot
-    },
-
-    __id__: Symbol()
+  get attributes () {
+    return []
   }
-)
+
+  get children () {
+    return this.#children
+  }
+
+  get id () {
+    return this.#id
+  }
+
+  get listeners () {
+    return []
+  }
+
+  get slot () {
+    return this.#slot
+  }
+
+  constructor (props, children) {
+    this.#children = children
+    this.#id = Symbol()
+    this.#slot = props.slot
+  }
+
+  static create (props, children) {
+    return new Fragment(props, children)
+  }
+}
+
+export default Fragment.create
