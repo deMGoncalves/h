@@ -1,20 +1,20 @@
 import * as f from 'f'
 
 class Listener {
-  #key
+  #name
   #parent
   #value
 
-  get key () {
-    return this.#key
+  get name () {
+    return this.#name
   }
 
   get value () {
     return this.#value
   }
 
-  constructor (key, value, parent) {
-    this.#key = key
+  constructor (name, value, parent) {
+    this.#name = name
     this.#parent = parent
     this.#value = value
   }
