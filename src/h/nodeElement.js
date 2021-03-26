@@ -32,7 +32,7 @@ class NodeElement {
 
   constructor (tagName, props, children) {
     this.#attributes = Attribute.create(props, this)
-    this.#children = Child.create(props, this)
+    this.#children = Child.create(children, this)
     this.#listeners = Listener.create(props, this)
     this.#id = Symbol()
     this.#tagName = tagName
