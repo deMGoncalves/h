@@ -1,4 +1,4 @@
-class Event {
+class Listener {
   #key
   #parent
   #value
@@ -25,4 +25,4 @@ class Event {
   }
 }
 
-export default Event
+export default Listener

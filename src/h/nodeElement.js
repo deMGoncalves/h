@@ -1,10 +1,10 @@
 import Attribute from './attribute'
-import Event from './event'
+import Listener from './listener'
 
 class NodeElement {
   #attributes
   #children
-  #events
+  #listeners
   #id
   #tagName
 
@@ -16,8 +16,8 @@ class NodeElement {
     return this.#children
   }
 
-  get events () {
-    return this.#events
+  get listeners () {
+    return this.#listeners
   }
 
   get id () {
@@ -31,7 +31,7 @@ class NodeElement {
   constructor (tagName, props, children) {
     this.#attributes = Attribute.create(props, this)
     this.#children = children
-    this.#events = Event.create(props, this)
+    this.#listeners = Listener.create(props, this)
     this.#id = Symbol()
     this.#tagName = tagName
   }
