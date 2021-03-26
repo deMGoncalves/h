@@ -1,4 +1,4 @@
 import slot from '@/slot'
 
-export default (componentRef, attributes, children) =>
-  componentRef(attributes, slot(children))
+export default (componentRef, props, children) =>
+  componentRef(props, slot(children))

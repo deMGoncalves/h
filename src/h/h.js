@@ -4,8 +4,8 @@ import isComponent from './isComponent'
 import isTagName from './isTagName'
 import NodeElement from './nodeElement'
 
-export default (tagNameOrComponent, attributes, ...children) =>
+export default (tagNameOrComponent, props, ...children) =>
   f.cond(
     [isTagName, NodeElement.create],
     [isComponent, executeComponent]
-  )(tagNameOrComponent, { ...attributes }, f.flatten(children))
+  )(tagNameOrComponent, { ...props }, f.flatten(children))
