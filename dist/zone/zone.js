@@ -21,7 +21,7 @@ var _className, _offScreen, _slot;
 var _a;
 import * as f from 'f';
 import lazyLoad from 'lazyload';
-import * as d from "../dunders/index";
+import * as d from '@/dunders';
 import paint from "../paint/index";
 import repaint from "../repaint/index";
 import component from "./component";

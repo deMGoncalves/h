@@ -1,5 +1,5 @@
 import h from '@/h'
-import Fragment from '@/fragment'
+import Comment from '@/comment'
 
 export default (props, children) =>
-  props.if ? children : <Fragment />
+  props.if ? children : <Comment />

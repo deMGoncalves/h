@@ -1,2 +1,7 @@
+import mapper from '@/mapper'
+
 export default (descriptor) =>
-  document.createTextNode(descriptor.textContent)
+  mapper.set(
+    descriptor.__id__,
+    document.createTextNode(descriptor.textContent)
+  )

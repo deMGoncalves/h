@@ -1,6 +1,13 @@
-export default (textContent) => (
+export default (text) => (
   {
-    textContent,
+    get textContent () {
+      return text
+    },
+
+    changeTextContent (value) {
+      return text = value
+    },
+
     __id__: Symbol()
   }
 )

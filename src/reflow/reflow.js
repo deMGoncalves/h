@@ -1,32 +1,22 @@
 import * as f from 'f'
-import appendChild from './appendChild'
-import doNothing from './doNothing'
-import nodesAreDifferent from './nodesAreDifferent'
-import nodesIsCustomTag from './nodesIsCustomTag'
-import nodesIsText from './nodesIsText'
-import notHasNode from './notHasNode'
-import notHasVNode from './notHasVNode'
-import otherObject from './otherObject'
-import remove from './remove'
-import replaceChild from './replaceChild'
-import replaceComponent from './replaceComponent'
-import restrictAttributes from './restrictAttributes'
-import replaceNode from './replaceNode'
-import sameObject from './sameObject'
-import setTextContent from './setTextContent'
+import changeText from './changeText'
+import differentNode from './differentNode'
+import differentText from './differentText'
+import equalNode from './equalNode'
+import equalText from './equalText'
+import replace from './replace'
+import restrict from './restrict'
+import stub from './stub'
 
-/*
-export default f.cond(
-  [notHasNode, appendChild],
-  [notHasVNode, remove],
-  [nodesIsText, setTextContent],
-  [nodesAreDifferent, replaceChild],
-  [sameObject, doNothing],
-  [otherObject, replaceComponent],
-  [nodesIsCustomTag, restrictAttributes],
-  [f.T, replaceNode]
+const reflow = (node, vNode) => (
+  console.log(node, vNode),
+
+  f.cond(
+    [equalText, stub],
+    [differentText, changeText],
+    [equalNode, restrict],
+    [differentNode, replace]
+  )(node, vNode)
 )
-*/
 
-export default (node, vNode) =>
-  console.log(node, vNode)
+export default reflow
