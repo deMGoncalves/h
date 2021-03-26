@@ -18,7 +18,8 @@ class Attribute {
   }
 
   static create (props, parent) {
-    Object.entries(props)
+    return Object
+      .entries(props)
       .filter(([key]) => !/^(on\S+|is|slot)$/.test(key))
       .map(([key, value]) => new Attribute(key, value, parent))
   }
