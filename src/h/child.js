@@ -1,3 +1,5 @@
+import TextElement from './textElement'
+
 class Child {
   static create (children, parent) {
     return children
