@@ -6,7 +6,7 @@ class Child {
     return f.map(
       children,
       (nodeOrText) =>
-        f.or(f.is(String, nodeOrText), f.is(Number, nodeOrText))
+        TextElement.is(nodeOrText)
           ? TextElement.create(nodeOrText, parent)
           : nodeOrText.setParent(parent)
     )

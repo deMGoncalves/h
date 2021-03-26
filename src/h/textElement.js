@@ -1,3 +1,5 @@
+import * as f from 'f'
+
 class TextElement {
   #id
   #parent
@@ -15,6 +17,13 @@ class TextElement {
 
   static create (textContent, parent) {
     return new TextElement(textContent, parent)
+  }
+
+  static is (textOrNode) {
+    return f.or(
+      f.is(String, textOrNode),
+      f.is(Number, textOrNode)
+    )
   }
 }
 
