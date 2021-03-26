@@ -1,4 +1,5 @@
 import Attribute from './attribute'
+import Child from './child'
 import Listener from './listener'
 
 class NodeElement {
@@ -31,7 +32,7 @@ class NodeElement {
 
   constructor (tagName, props, children) {
     this.#attributes = Attribute.create(props, this)
-    this.#children = children
+    this.#children = Child.create(props, this)
     this.#listeners = Listener.create(props, this)
     this.#id = Symbol()
     this.#tagName = tagName
