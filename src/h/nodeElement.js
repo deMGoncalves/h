@@ -6,6 +6,7 @@ class NodeElement {
   #children
   #listeners
   #id
+  #parent
   #tagName
 
   get attributes () {
@@ -34,6 +35,11 @@ class NodeElement {
     this.#listeners = Listener.create(props, this)
     this.#id = Symbol()
     this.#tagName = tagName
+  }
+
+  setParent (parent) {
+    this.#parent = parent
+    return this
   }
 
   static create (tagName, props, children) {
