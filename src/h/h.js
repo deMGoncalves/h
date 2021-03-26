@@ -1,11 +1,11 @@
 import * as f from 'f'
-import createNode from './createNode'
 import executeComponent from './executeComponent'
 import isComponent from './isComponent'
 import isTagName from './isTagName'
+import NodeElement from './nodeElement'
 
 export default (tagNameOrComponent, attributes, ...children) =>
   f.cond(
-    [isTagName, createNode],
+    [isTagName, NodeElement.create],
     [isComponent, executeComponent]
   )(tagNameOrComponent, { ...attributes }, f.flatten(children))
