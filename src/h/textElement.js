@@ -1,4 +1,5 @@
 class TextElement {
+  #id
   #parent
   #textContent
 
@@ -7,6 +8,7 @@ class TextElement {
   }
 
   constructor (textContent, parent) {
+    this.#id = Symbol()
     this.#parent = parent
     this.#textContent = textContent
   }
