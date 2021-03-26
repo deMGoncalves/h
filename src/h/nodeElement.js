@@ -36,6 +36,7 @@ class NodeElement {
     this.#children = Child.mapper(children, this)
     this.#listeners = Listener.create(props, this)
     this.#id = Symbol()
+    this.#parent = {}
     this.#tagName = tagName
   }
 
