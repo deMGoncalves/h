@@ -1,21 +1,21 @@
 import * as f from 'f'
 
 class Listener {
+  #event
   #handler
-  #name
   #parent
+  
+  get event () {
+    return this.#event
+  }    
   
   get handler () {
     return this.#handler
   }
 
-  get name () {
-    return this.#name
-  }    
-
-  constructor (name, handler, parent) {
+  constructor (event, handler, parent) {
+    this.#event = event
     this.#handler = handler
-    this.#name = name
     this.#parent = parent
   }
 
