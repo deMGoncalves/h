@@ -1,7 +1,7 @@
 import * as f from 'f'
-import elementMapper from './elementMapper'
+import nodeMapper from './nodeMapper'
 
-const render = (element, rootElement) =>
-  element.append(elementMapper(rootElement))
+const render = (node, vNode) =>
+  node.append(nodeMapper(vNode))
 
 export default f.curry(f.arity(2, f.frame(render)))

@@ -40,6 +40,10 @@ class NodeElement {
     return this.#tagName
   }
 
+  get type () {
+    return 'node'
+  }
+
   constructor (tagName, props, children) {
     this.#attributes = Attribute.create(props, this)
     this.#children = Child.mapper(children, this)
