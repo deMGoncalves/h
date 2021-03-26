@@ -1,4 +1,5 @@
 import Attribute from './attribute'
+import Event from './event'
 
 class NodeElement {
   #attributes
@@ -30,6 +31,7 @@ class NodeElement {
   constructor (tagName, props, children) {
     this.#attributes = Attribute.create(props, this)
     this.#children = children
+    this.#events = Event.create(props, this)
     this.#id = Symbol()
     this.#tagName = tagName
   }
