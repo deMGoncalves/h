@@ -2,7 +2,7 @@ import * as f from 'f'
 import TextElement from './textElement'
 
 class Child {
-  static create (children, parent) {
+  static mapper (children, parent) {
     return f.map(
       children,
       (nodeOrText) =>
