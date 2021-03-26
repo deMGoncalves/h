@@ -1,3 +1,5 @@
+import * as f from 'f'
+
 class Listener {
   #key
   #parent
@@ -18,10 +20,13 @@ class Listener {
   }
 
   static create (props, parent) {
-    return Object
-      .entries(props)
-      .filter(([key]) => /^on\S+$/i.test(key))
-      .map(([key, value]) => new Event(key, value, parent))
+    return f.map(
+      f.filter(
+        f.toPairs(props),
+        f.compose(f.test(/^on\S+$/), f.prop('[0]'))
+      ),
+      (args) => new Listener(...args, parent)
+    )
   }
 }
 
