@@ -13,6 +13,10 @@ class Text {
     return this.#id
   }
 
+  get parent () {
+    return this.#parent
+  }
+
   constructor (content, parent) {
     this.#content = content
     this.#id = Symbol()
