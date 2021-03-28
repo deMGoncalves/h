@@ -7,6 +7,7 @@ class Tag {
   #className
   #id
   #is
+  #parent
   #slot
   #tagName
 
@@ -26,6 +27,10 @@ class Tag {
     return this.#is
   }
 
+  get parent () {
+    return this.#parent
+  }
+
   get slot () {
     return this.#slot
   }
@@ -41,6 +46,11 @@ class Tag {
     this.#is = props.is
     this.#slot = props.slot
     this.#tagName = tagName
+  }
+
+  setParent (parent) {
+    this.#parent = parent
+    return this
   }
 
   static create (tagName, props, children) {
