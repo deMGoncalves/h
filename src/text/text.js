@@ -2,13 +2,19 @@ import * as f from 'f'
 
 class Text {
   #content
+  #id
 
-  get value () {
+  get content () {
     return this.#content
+  }
+
+  get id () {
+    return this.#id
   }
 
   constructor (content) {
     this.#content = content
+    this.#id = Symbol()
   }
 
   static create (content) {
