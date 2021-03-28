@@ -3,6 +3,7 @@ import * as f from 'f'
 class Text {
   #content
   #id
+  #parent
 
   get content () {
     return this.#content
@@ -12,13 +13,14 @@ class Text {
     return this.#id
   }
 
-  constructor (content) {
+  constructor (content, parent) {
     this.#content = content
     this.#id = Symbol()
+    this.#parent = parent
   }
 
-  static create (content) {
-    return new Text(content)
+  static create (content, parent) {
+    return new Text(content, parent)
   }
 
   static is (textOrTag) {
