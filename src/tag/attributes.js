@@ -1,23 +1,23 @@
 class Attributes {
+  #list
   #parent
-  #props
+
+  get list () {
+    return this.#list
+  }
 
   get parent () {
     return this.#parent
   }
 
-  get props () {
-    return this.#props
-  }
-
-  constructor (props, parent) {
+  constructor (list, parent) {
+    this.#list = list
     this.#parent = parent
-    this.#props = props
   }
 
-  static create (props, parent) {
+  static create (list, parent) {
     return new Attributes(
-      f.filter(f.entries(props), f.compose(f.not, f.test(/^(on\S+|is|slot)$/), f.prop('[0]'))),
+      f.filter(f.entries(list), f.compose(f.not, f.test(/^(on\S+|is|slot)$/), f.prop('[0]'))),
       parent
     )
   }
