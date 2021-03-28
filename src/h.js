@@ -1,6 +1,6 @@
 import * as f from 'f'
 import Component from './component'
-import NodeElement from './nodeElement'
+import Tag from './tag'
 
 export default (tagNameOrComponent, props, ...children) =>
   f.cond(
