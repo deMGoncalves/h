@@ -7,10 +7,12 @@ class Children {
     this.#nodes = nodes
   }
 
-  static create (nodes) {
+  static create (nodes, parent) {
     return new Children(
       f.map(nodes, (textOrTag) =>
-        Text.is(textOrTag) ? Text.create(textOrTag) : textOrTag)
+        Text.is(textOrTag)
+          ? Text.create(textOrTag, parent)
+          : textOrTag.setParent(parent))
     )
   }
 }
