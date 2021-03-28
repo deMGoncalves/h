@@ -4,6 +4,10 @@ class ClassName {
   #parent
   #value
 
+  get parent () {
+    return this.#parent
+  }
+
   get value () {
     return this.#value
   }
