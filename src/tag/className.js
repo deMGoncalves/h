@@ -12,7 +12,7 @@ class ClassName {
   }
 
   static create (props) {
-    return new ClassName(f.join(f.flatten(f.concat([], f.or(props.className, ''))), ' '))
+    return new ClassName(f.join(f.flatten(f.concat([], f.or(props.className, []))), ' '))
   }
 }
 
