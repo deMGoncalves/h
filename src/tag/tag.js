@@ -1,8 +1,10 @@
 import * as f from 'f'
+import Attributes from './attributes'
 import Children from './children'
 import ClassName from './className'
 
 class Tag {
+  #attributes
   #children
   #className
   #id
@@ -10,6 +12,10 @@ class Tag {
   #parent
   #slot
   #tagName
+
+  get attributes () {
+    return this.#attributes
+  }
 
   get children () {
     return this.#children
@@ -40,6 +46,7 @@ class Tag {
   }
 
   constructor (tagName, props, children) {
+    this.#attributes = Attributes.create(props, parent)
     this.#children = Children.create(children, parent)
     this.#className = ClassName.create(props, parent)
     this.#id = Symbol()
