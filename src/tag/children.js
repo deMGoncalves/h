@@ -1,6 +1,17 @@
+import Text from '@/text'
+
 class Children {
-  static create (children) {
-    return new Children()
+  #nodes
+
+  constructor (nodes) {
+    this.#nodes = nodes
+  }
+
+  static create (nodes) {
+    return new Children(
+      f.map(nodes, (textOrTag) =>
+        Text.is(textOrTag) ? Text.create(textOrTag) : textOrTag)
+    )
   }
 }
 
