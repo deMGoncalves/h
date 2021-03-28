@@ -4,6 +4,6 @@ import Tag from './tag'
 
 export default (tagNameOrComponent, props, ...children) =>
   f.cond(
-    [NodeElement.is, NodeElement.create],
+    [Tag.is, Tag.create],
     [Component.is, Component.execute]
   )(tagNameOrComponent, { ...props }, f.flatten(children))
