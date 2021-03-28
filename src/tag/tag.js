@@ -3,10 +3,15 @@ import ClassName from './className'
 
 class Tag {
   #className
+  #slot
   #tagName
 
   get className () {
     return this.#className
+  }
+
+  get slot () {
+    return this.#slot
   }
 
   get tagName () {
@@ -15,6 +20,7 @@ class Tag {
 
   constructor (tagName, props, children) {
     this.#className = ClassName.create(props)
+    this.#slot = props.slot
     this.#tagName = tagName
   }
 
