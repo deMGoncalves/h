@@ -5,6 +5,7 @@ import ClassName from './className'
 class Tag {
   #children
   #className
+  #id
   #is
   #slot
   #tagName
@@ -15,6 +16,10 @@ class Tag {
 
   get className () {
     return this.#className
+  }
+
+  get id () {
+    return this.#id
   }
 
   get is () {
@@ -32,6 +37,7 @@ class Tag {
   constructor (tagName, props, children) {
     this.#children = Children.create(children)
     this.#className = ClassName.create(props)
+    this.#id = Symbol()
     this.#is = props.is
     this.#slot = props.slot
     this.#tagName = tagName
