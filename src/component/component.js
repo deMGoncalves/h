@@ -1,4 +1,5 @@
 import * as f from 'f'
+import slot from './slot'
 
 class Component {
   static execute (componentRef, props, children) {
