@@ -1,11 +1,17 @@
 import * as f from 'f'
+import Children from './children'
 import ClassName from './className'
 
 class Tag {
+  #children
   #className
   #is
   #slot
   #tagName
+
+  get children () {
+    return this.#children
+  }
 
   get className () {
     return this.#className
@@ -24,6 +30,7 @@ class Tag {
   }
 
   constructor (tagName, props, children) {
+    this.#children = Children.create(children)
     this.#className = ClassName.create(props)
     this.#is = props.is
     this.#slot = props.slot
