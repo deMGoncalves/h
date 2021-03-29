@@ -1,9 +1,11 @@
+import * as f from 'f'
+
 class Attributes {
   #list
   #parent
 
   get list () {
-    return this.#list
+    return f.map(this.#list, ([key, value]) => ({ key, value }))
   }
 
   get parent () {

@@ -2,11 +2,13 @@ import * as f from 'f'
 import Attributes from './attributes'
 import Children from './children'
 import ClassName from './className'
+import Events from './events'
 
 class Tag {
   #attributes
   #children
   #className
+  #events
   #id
   #is
   #parent
@@ -23,6 +25,10 @@ class Tag {
 
   get className () {
     return this.#className
+  }
+
+  get events () {
+    return this.#events
   }
 
   get id () {
@@ -49,6 +55,7 @@ class Tag {
     this.#attributes = Attributes.create(props, parent)
     this.#children = Children.create(children, parent)
     this.#className = ClassName.create(props, parent)
+    this.#events = Events.create(props, parent)
     this.#id = Symbol()
     this.#is = props.is
     this.#slot = props.slot
