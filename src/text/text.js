@@ -1,7 +1,9 @@
 import * as f from 'f'
+import reflow from './reflow'
 import render from './render'
 
 @render
+@reflow
 class Text {
   #content
   #id
@@ -23,6 +25,11 @@ class Text {
     this.#content = content
     this.#id = Symbol()
     this.#parent = parent
+  }
+
+  changeContent (newContent) {
+    this.#content = newContent
+    return this
   }
 
   static create (content, parent) {
