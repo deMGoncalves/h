@@ -2409,6 +2409,12 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+hook@deMGoncalves/hook:
+  version "1.0.0"
+  resolved "https://codeload.github.com/deMGoncalves/hook/tar.gz/0613484641637b901ab041971a45f8005d396a90"
+  dependencies:
+    f deMGoncalves/f
+
 hosted-git-info@^2.1.4:
   version "2.8.8"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.8.tgz#7539bd4bc1e0e0a895815a2e0262420b12858488"
@@ -3179,8 +3185,6 @@ jest@^26.6.3:
 jestconfig@deMGoncalves/jestconfig:
   version "1.0.0"
   resolved "https://codeload.github.com/deMGoncalves/jestconfig/tar.gz/e25d71535403d7c716bf1c304780fe3469de6c14"
-  dependencies:
-    f deMGoncalves/f
 
 js-tokens@^4.0.0:
   version "4.0.0"
