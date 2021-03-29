@@ -19,9 +19,9 @@ class Attributes {
     this.#parent = parent
   }
 
-  static create (list, parent) {
+  static create (props, parent) {
     return new Attributes(
-      f.filter(f.entries(list), f.compose(f.not, f.test(/^(className|is|slot|on\S+)$/), f.prop('[0]'))),
+      f.filter(f.entries(props), f.compose(f.not, f.test(/^(className|is|slot|on\S+)$/i), f.prop('[0]'))),
       parent
     )
   }

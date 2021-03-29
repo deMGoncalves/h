@@ -21,7 +21,7 @@ class Events {
 
   static create (props, parent) {
     return new Events (
-      f.filter(f.entries(props), f.compose(f.test(/^on\S+$/), f.prop('[0]'))),
+      f.filter(f.entries(props), f.compose(f.test(/^on\S+$/i), f.prop('[0]'))),
       parent
     )
   }
