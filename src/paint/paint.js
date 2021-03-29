@@ -1,12 +1,13 @@
 import * as f from 'f'
+import create from './create'
 
 const paint = (componentRef) =>
   (Entity) =>
     new Proxy(
       function (props, children) {
         return (this instanceof Entity)
-          ? new Entity(...arguments)
-          : componentRef(new Entity(props), children)
+          ? create(Entity, ...arguments)
+          : componentRef(create(Entity, props), children)
       },
       {
         get: (_target, key) => Entity[key],

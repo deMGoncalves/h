@@ -1,3 +1,10 @@
 import * as f from 'f';
-import hook from "./hook";
-export default (_target, _method, descriptor) => f.assign(descriptor, { value: hook(descriptor.value) });
+const repaint = function (_entity, _method, descriptor) {
+    const method = descriptor.value;
+    return f.assign(descriptor, {
+        value: function () {
+            return f.always(method.apply(this, arguments))(this[f.magic('repaint')]());
+        }
+    });
+};
+export default repaint;
