@@ -21,7 +21,7 @@ class Attributes {
 
   static create (list, parent) {
     return new Attributes(
-      f.filter(f.entries(list), f.compose(f.not, f.test(/^(on\S+|is|slot)$/), f.prop('[0]'))),
+      f.filter(f.entries(list), f.compose(f.not, f.test(/^(className|is|slot|on\S+)$/), f.prop('[0]'))),
       parent
     )
   }
