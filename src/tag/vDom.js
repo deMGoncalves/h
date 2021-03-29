@@ -7,6 +7,7 @@ const vDom = (tag) =>
 
     __append__: () => {
       tag.children.__append__()
+      tag.attributes.__append__()
       return tag.__element__
     }
   })
