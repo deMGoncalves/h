@@ -1,7 +1,9 @@
 import * as f from 'f'
+import reflow from './reflow'
 import render from './render'
 
 @render
+@reflow
 class Attributes {
   #list
   #parent
