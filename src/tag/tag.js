@@ -4,8 +4,10 @@ import Children from './children'
 import ClassName from './className'
 import Events from './events'
 import render from './render'
+import repaint from './repaint'
 
 @render
+@repaint
 class Tag {
   #attributes
   #children

@@ -7,7 +7,7 @@ const repaint = function (_entity, _method, descriptor) {
     descriptor,
     {
       value: function () {
-        return f.always(method.apply(this, arguments))(f.or(this[f.magic('repaint')], f.always(null))())
+        return f.always(method.apply(this, arguments))(f.or(this[f.magic('reflow')], f.always(null))())
       }
     }
   )
