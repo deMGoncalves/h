@@ -1,12 +1,10 @@
 import * as f from 'f'
 import executeComponent from './executeComponent'
+import traps from './traps'
 
 export default (componentRef, entity) =>
-  new Proxy(
+  traps(
     (_props, children) =>
       executeComponent(componentRef, entity, children),
-    {
-      get: (_target, key) => f.is(Function, entity[key]) ? entity[key].bind(entity) : entity[key],
-      set: (_target, key, value) => f.T(entity[key] = value)
-    }
+    entity
   )

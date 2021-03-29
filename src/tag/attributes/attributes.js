@@ -7,7 +7,7 @@ class Attributes {
   #parent
 
   get list () {
-    return f.map(this.#list, ([key, value]) => ({ key, value }))
+    return f.map([...this.#list], ([key, value]) => ({ key, value }))
   }
 
   get parent () {
@@ -15,8 +15,18 @@ class Attributes {
   }
 
   constructor (list, parent) {
-    this.#list = list
+    this.#list = new Map(list)
     this.#parent = parent
+  }
+
+  remove (key) {
+    this.#list.remove(key)
+    return this
+  }
+
+  set (key, value) {
+    this.#list.set(key, value)
+    return this
   }
 
   static create (props, parent) {
