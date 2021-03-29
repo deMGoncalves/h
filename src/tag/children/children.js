@@ -1,6 +1,8 @@
 import * as f from 'f'
 import Text from '@/text'
+import vDom from './vDom'
 
+@vDom
 class Children {
   #list
   #parent

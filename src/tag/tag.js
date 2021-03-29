@@ -54,10 +54,10 @@ class Tag {
   }
 
   constructor (tagName, props, children) {
-    this.#attributes = Attributes.create(props, parent)
-    this.#children = Children.create(children, parent)
-    this.#className = ClassName.create(props, parent)
-    this.#events = Events.create(props, parent)
+    this.#attributes = Attributes.create(props, this)
+    this.#children = Children.create(children, this)
+    this.#className = ClassName.create(props, this)
+    this.#events = Events.create(props, this)
     this.#id = Symbol()
     this.#is = props.is
     this.#slot = props.slot
