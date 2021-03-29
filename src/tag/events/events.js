@@ -1,5 +1,7 @@
 import * as f from 'f'
+import render from './render'
 
+@render
 class Events {
   #list
   #parent
