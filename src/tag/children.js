@@ -1,3 +1,4 @@
+import * as f from 'f'
 import Text from '@/text'
 
 class Children {
