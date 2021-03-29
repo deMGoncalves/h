@@ -15,7 +15,7 @@ class Attributes {
   }
 
   constructor (list, parent) {
-    this.#list = new Map(list)
+    this.#list = list
     this.#parent = parent
   }
 
@@ -31,7 +31,7 @@ class Attributes {
 
   static create (props, parent) {
     return new Attributes(
-      f.filter(f.entries(props), f.compose(f.not, f.test(/^(className|is|slot|on\S+)$/i), f.prop('[0]'))),
+      new Map(f.filter(f.entries(props), f.compose(f.not, f.test(/^(className|is|slot|on\S+)$/i), f.prop('[0]')))),
       parent
     )
   }
