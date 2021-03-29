@@ -1,6 +1,7 @@
 import * as f from 'f'
 import reflow from './reflow'
 import render from './render'
+import repaint from './repaint'
 
 @render
 @reflow
@@ -27,6 +28,7 @@ class Text {
     this.#parent = parent
   }
 
+  @repaint
   changeContent (newContent) {
     this.#content = newContent
     return this
