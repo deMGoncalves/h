@@ -1,5 +1,7 @@
 import * as f from 'f'
+import render from './render'
 
+@render
 class Attributes {
   #list
   #parent
