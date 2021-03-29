@@ -1,11 +1,10 @@
 import * as f from 'f';
-import createComponent from "./createComponent";
-import createEntity from "./createEntity";
-export default (componentRef) => (Entity) => new Proxy(function (attributes, children) {
+const paint = (componentRef) => (Entity) => new Proxy(function (props, children) {
     return (this instanceof Entity)
-        ? createEntity(componentRef, new Entity(...arguments))
-        : createComponent(componentRef, new Entity(Object.assign({}, attributes)), children);
+        ? new Entity(...arguments)
+        : componentRef(new Entity(props), children);
 }, {
-    get: (_, key) => Entity[key],
-    set: (_, key, value) => f.T(Entity[key] = value)
+    get: (_target, key) => Entity[key],
+    set: (_target, key, value) => f.T(Entity[key] = value)
 });
+export default paint;
