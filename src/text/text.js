@@ -28,7 +28,7 @@ class Text {
   }
 
   static is (textOrTag) {
-    return f.some([String, Number], f.is(textOrTag))
+    return f.some([String, Number], f.is(f.__, textOrTag))
   }
 }
 
