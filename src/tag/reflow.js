@@ -1,10 +1,11 @@
 import * as f from 'f'
 import hook from 'hook'
 
+const magic = f.magic('reflow')
 const reflow = (tag) =>
   f.assign(tag, {
-    [f.magic('reflow')]: (newTag) => {
-      console.log('reflow', tag, newTag)
+    [magic]: (newTag) => {
+      tag.children[magic](newTag.children)
     }
   })
 

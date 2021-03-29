@@ -3,11 +3,11 @@ import Attributes from './attributes'
 import Children from './children'
 import ClassName from './className'
 import Events from './events'
+import reflow from './reflow'
 import render from './render'
-import repaint from './repaint'
 
 @render
-@repaint
+@reflow
 class Tag {
   #attributes
   #children
