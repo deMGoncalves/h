@@ -1,6 +1,6 @@
 import * as f from 'f'
 
-const append = (element, node) =>
+const render = (element, node) =>
   element.append(node[f.magic('render')])
 
-export default f.frame(append)
+export default f.frame(render)
