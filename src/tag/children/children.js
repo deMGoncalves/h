@@ -1,8 +1,8 @@
 import * as f from 'f'
 import Text from '@/text'
-import vDom from './vDom'
+import render from './render'
 
-@vDom
+@render
 class Children {
   #list
   #parent
