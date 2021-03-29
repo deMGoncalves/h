@@ -1,25 +1,25 @@
 import Text from '@/text'
 
 class Children {
-  #nodes
+  #list
   #parent
 
-  get nodes () {
-    return this.#nodes
+  get list () {
+    return this.#list
   }
 
   get parent () {
     return this.#parent
   }
 
-  constructor (nodes, parent) {
-    this.#nodes = nodes
+  constructor (list, parent) {
+    this.#list = list
     this.#parent = parent
   }
 
-  static create (nodes, parent) {
+  static create (list, parent) {
     return new Children(
-      f.map(nodes, (textOrTag) =>
+      f.map(list, (textOrTag) =>
         Text.is(textOrTag) ? Text.create(textOrTag, parent) : textOrTag.setParent(parent)),
       parent
     )
