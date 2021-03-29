@@ -10,4 +10,3 @@ const render = (attributes) =>
   })
 
 export default hook(render)
-
