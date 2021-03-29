@@ -1,5 +1,7 @@
 import * as f from 'f'
+import vDom from './vDom'
 
+@vDom
 class Text {
   #content
   #id
