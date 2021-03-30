@@ -14,7 +14,7 @@ export default (children, other) =>
     f.apply(f.cond(
       [added, append(children)],
       [removed, remove(children)],
-      [different, replace(children)]
+      [different, replace(children)],
       [equal, reflow],
     ))
   )
