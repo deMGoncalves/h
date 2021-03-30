@@ -1,4 +1,5 @@
 import * as f from 'f'
+import mapper from './mapper'
 import paint from './paint'
 import repaint from './repaint'
 
@@ -51,10 +52,7 @@ class Attributes {
   }
 
   static create (props, parent) {
-    return new Attributes(
-      new Map(f.filter(f.entries(props), f.compose(f.not, f.test(/^(className|is|slot|on\S+)$/i), f.prop('[0]')))),
-      parent
-    )
+    return new Attributes(mapper(props), parent)
   }
 }
 
