@@ -1,10 +1,10 @@
 import * as f from 'f'
 import hook from 'hook'
 
-const render = (className) =>
+const paint = (className) =>
   f.assign(className, {
-    [f.magic('render')]: (element) =>
+    [f.magic('paint')]: (element) =>
       (className.value && (element.className = className.value))
   })
 
-export default hook(render)
+export default hook(paint)
