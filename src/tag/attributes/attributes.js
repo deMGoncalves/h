@@ -8,19 +8,19 @@ import repaint from './repaint'
 @paint
 class Attributes {
   #map
-  #parent
+  #target
 
   get list () {
     return convertToList(this.#map)
   }
 
-  get parent () {
-    return this.#parent
+  get target () {
+    return this.#target
   }
 
-  constructor (map, parent) {
+  constructor (map, target) {
     this.#map = map
-    this.#parent = parent
+    this.#target = target
   }
 
   reflow (other) {
@@ -41,8 +41,8 @@ class Attributes {
     return this
   }
 
-  static create (props, parent) {
-    return new Attributes(mapper(props), parent)
+  static create (props, target) {
+    return new Attributes(mapper(props), target)
   }
 }
 
