@@ -1,5 +1,6 @@
 import * as f from 'f'
 import hook from 'hook'
+import dom from '@/dom'
 
 const magic = f.magic('paint')
 const paint = (tag) =>
@@ -12,7 +13,7 @@ const paint = (tag) =>
       tag.className[magic](element)
       tag.events[magic](element)
 
-      return element
+      return dom.append(element)
     }
   })
 
