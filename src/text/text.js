@@ -1,10 +1,8 @@
 import * as f from 'f'
-import reflow from './reflow'
-import render from './render'
+import paint from './paint'
 import repaint from './repaint'
 
-@render
-@reflow
+@paint
 class Text {
   #content
   #id
