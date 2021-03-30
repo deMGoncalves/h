@@ -23,14 +23,14 @@ class Children {
   }
 
   @repaint
-  append (other) {
-    this.#list.push(other)
+  append (child) {
+    this.#list.push(child)
     return this
   }
 
   @repaint
-  replace (current, other) {
-    f.splice(f.indexOf(this.#list, current), 1, other)
+  replace (child, other) {
+    f.splice(f.indexOf(this.#list, child), 1, other)
     return this
   }
 
@@ -40,8 +40,8 @@ class Children {
   }
 
   @repaint
-  remove (current) {
-    f.splice(f.indexOf(this.#list, current), 1)
+  remove (child) {
+    f.splice(f.indexOf(this.#list, child), 1)
     return this
   }
 
