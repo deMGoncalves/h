@@ -4,6 +4,7 @@ import Children from './children'
 import ClassName from './className'
 import Events from './events'
 import paint from './paint'
+import rewind from './rewind'
 
 @paint
 class Tag {
@@ -65,9 +66,7 @@ class Tag {
   }
 
   reflow (other) {
-    this.attributes.reflow(other.attributes)
-    this.children.reflow(other.children)
-    this.className.reflow(other.className)
+    rewind(this, other)
     return this
   }
 
