@@ -3,26 +3,26 @@ import paint from './paint'
 
 @paint
 class ClassName {
-  #parent
+  #target
   #value
 
-  get parent () {
-    return this.#parent
+  get target () {
+    return this.#target
   }
 
   get value () {
     return this.#value
   }
 
-  constructor (value, parent) {
-    this.#parent = parent
+  constructor (value, target) {
+    this.#target = target
     this.#value = value
   }
 
-  static create (props, parent) {
+  static create (props, target) {
     return new ClassName(
       f.join(f.flatten(f.concat([], f.or(props.className, []))), ' '),
-      parent
+      target
     )
   }
 }

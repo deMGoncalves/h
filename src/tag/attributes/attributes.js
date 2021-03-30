@@ -36,7 +36,7 @@ class Attributes {
 
   @repaint
   setItem (key, value) {
-    if(f.and(key, value))
+    if (f.and(key, value))
       this.#map.set(key, value)
     return this
   }
