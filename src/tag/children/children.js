@@ -20,6 +20,11 @@ class Children {
     this.#target = target
   }
 
+  append (child) {
+    this.#list.push(child)
+    return this
+  }
+
   reflow (other) {
     f.forEach(
       f.zip(this.list, other.list),
