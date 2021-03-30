@@ -1,4 +1,3 @@
-import * as f from 'f'
 import convertToList from './convertToList'
 import mapper from './mapper'
 import paint from './paint'

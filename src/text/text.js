@@ -30,7 +30,7 @@ class Text {
 
   constructor (content, parent) {
     this.#content = content
-    this.#id = Symbol()
+    this.#id = Symbol(this.name)
     this.#parent = parent
   }
 
@@ -39,10 +39,9 @@ class Text {
     this.#content = content
     return this
   }
-  
+
   reflow (other) {
-    if (f.different(this.content, other.content))
-      this.changeContent(other.content)
+    if (f.different(this.content, other.content)) { this.changeContent(other.content) }
     return this
   }
 

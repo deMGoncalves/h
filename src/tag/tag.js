@@ -63,7 +63,7 @@ class Tag {
     this.#children = Children.create(children, this)
     this.#className = ClassName.create(props, this)
     this.#events = Events.create(props, this)
-    this.#id = Symbol()
+    this.#id = Symbol(tagName)
     this.#is = props.is
     this.#name = tagName
     this.#slot = props.slot

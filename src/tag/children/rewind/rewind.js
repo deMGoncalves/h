@@ -15,6 +15,6 @@ export default (children, other) =>
       [added, append(children)],
       [removed, remove(children)],
       [different, replace(children)],
-      [equal, reflow],
+      [equal, reflow]
     ))
   )

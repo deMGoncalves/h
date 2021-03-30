@@ -28,8 +28,7 @@ class ClassName {
   }
 
   reflow (other) {
-    if (f.different(this.value, other.value))
-      this.changeValue(other.value)
+    if (f.different(this.value, other.value)) { this.changeValue(other.value) }
     return this
   }
 
