@@ -1,29 +1,47 @@
 import * as f from 'f'
+import convertToList from './convertToList'
+import mapper from './mapper'
 import paint from './paint'
+import repaint from './repaint'
+import rewind from './rewind'
 
 @paint
 class Events {
-  #list
-  #parent
+  #map
+  #target
 
   get list () {
-    return f.map(this.#list, ([name, listener]) => ({ name, listener }))
+    return convertToList(this.#map)
   }
 
-  get parent () {
-    this.#parent
+  get target () {
+    return this.#target
   }
 
-  constructor (list, parent) {
-    this.#list = list
-    this.#parent = parent
+  constructor (map, target) {
+    this.#map = map
+    this.#target = target
   }
 
-  static create (props, parent) {
-    return new Events (
-      f.filter(f.entries(props), f.compose(f.test(/^on\S+$/i), f.prop('[0]'))),
-      parent
-    )
+  reflow (other) {
+    rewind(this, other)
+    return this
+  }
+
+  @repaint
+  removeItem (name) {
+    this.#map.remove(name)
+    return this
+  }
+
+  @repaint
+  setItem (name, listener) {
+    this.#map.set(name, listener)
+    return this
+  }
+
+  static create (props, target) {
+    return new Events(mapper(props), target)
   }
 }
 

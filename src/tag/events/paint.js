@@ -9,4 +9,3 @@ const paint = (events) =>
   })
 
 export default hook(paint)
-
