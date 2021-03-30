@@ -1,7 +1,7 @@
 import * as f from 'f'
-import render from './render'
+import paint from './paint'
 
-@render
+@paint
 class Attributes {
   #list
   #parent
