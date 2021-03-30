@@ -1,4 +1,5 @@
 import * as f from 'f'
+import add from './add'
 import mapper from './mapper'
 import paint from './paint'
 import repaint from './repaint'
@@ -24,7 +25,7 @@ class Children {
 
   @repaint
   append (child) {
-    this.#list.push(child)
+    add(this.#list, child)
     return this
   }
 
