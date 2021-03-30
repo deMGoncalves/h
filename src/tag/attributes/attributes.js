@@ -1,9 +1,9 @@
 import * as f from 'f'
-import compare from './compare'
 import convertToList from './convertToList'
 import mapper from './mapper'
 import paint from './paint'
 import repaint from './repaint'
+import rewind from './rewind'
 
 @paint
 class Attributes {
@@ -24,7 +24,7 @@ class Attributes {
   }
 
   reflow (other) {
-    compare(this, other)
+    rewind(this, other)
     return this
   }
 
