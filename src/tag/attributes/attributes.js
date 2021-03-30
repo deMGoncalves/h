@@ -1,4 +1,5 @@
 import * as f from 'f'
+import compare from './compare'
 import convertToList from './convertToList'
 import mapper from './mapper'
 import paint from './paint'
@@ -23,20 +24,7 @@ class Attributes {
   }
 
   reflow (other) {
-    f.forEach(
-      f.zip(this.list, other.list),
-      ([attribute, otherAttribute]) => (
-        f.and(
-          f.equal(attribute.key, otherAttribute.key),
-          f.different(attribute.value, otherAttribute.value)
-        ) && this.setKey(attribute.key, otherAttribute.value),
-
-        f.different(attribute.key, otherAttribute.key) && (
-          this.removeKey(attributes.key),
-          this.setKey(otherAttribute.key, otherAttribute.value)
-        )
-      )
-    )
+    compare(this, other)
     return this
   }
 
@@ -48,7 +36,8 @@ class Attributes {
 
   @repaint
   setKey (key, value) {
-    this.#map.set(key, value)
+    if(f.and(key, value))
+      this.#map.set(key, value)
     return this
   }
 
