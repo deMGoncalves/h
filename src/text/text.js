@@ -20,6 +20,10 @@ class Text {
     return this.#parent
   }
 
+  get type () {
+    return 3
+  }
+
   constructor (content, parent) {
     this.#content = content
     this.#id = Symbol()

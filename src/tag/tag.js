@@ -54,6 +54,10 @@ class Tag {
     return this.#slot
   }
 
+  get type () {
+    return 1
+  }
+
   constructor (tagName, props, children) {
     this.#attributes = Attributes.create(props, this)
     this.#children = Children.create(children, this)
