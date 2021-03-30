@@ -1,10 +1,7 @@
 import * as f from 'f';
-const repaint = function (_entity, _method, descriptor) {
-    const method = descriptor.value;
-    return f.assign(descriptor, {
-        value: function () {
-            return f.always(method.apply(this, arguments))(f.or(this[f.magic('reflow')], f.always(null))());
-        }
-    });
+import { after } from 'hook';
+const repaint = function (returned) {
+    f.or(this[f.magic('reflow')], f.always())();
+    return returned;
 };
-export default repaint;
+export default after(repaint);
