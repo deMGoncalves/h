@@ -1,23 +1,23 @@
 import * as f from 'f'
-import Text from '@/text'
+import mapper from './mapper'
 import paint from './paint'
 
 @paint
 class Children {
   #list
-  #parent
+  #target
 
   get list () {
     return this.#list
   }
 
-  get parent () {
-    return this.#parent
+  get target () {
+    return this.#target
   }
 
-  constructor (list, parent) {
+  constructor (list, target) {
     this.#list = list
-    this.#parent = parent
+    this.#target = target
   }
 
   reflow (other) {
@@ -28,12 +28,8 @@ class Children {
     return this
   }
 
-  static create (list, parent) {
-    return new Children(
-      f.map(list, (textOrTag) =>
-        Text.is(textOrTag) ? Text.create(textOrTag, parent) : textOrTag.setParent(parent)),
-      parent
-    )
+  static create (list, target) {
+    return new Children(mapper(list), target)
   }
 }
 
