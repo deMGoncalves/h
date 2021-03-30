@@ -3,7 +3,7 @@ import hook from 'hook'
 
 const paint = (attributes) =>
   f.assign(attributes, {
-    [f.magic('render')]: (element) =>
+    [f.magic('paint')]: (element) =>
       f.forEach(attributes.list, ({ key, value }) => element.setAttribute(key, value))
   })
 
