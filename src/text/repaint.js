@@ -5,4 +5,4 @@ import dom from '@/dom'
 const repaint = (text) =>
   f.always(text)(dom.query(text.id).textContent = text.content)
 
-export default after(f.frame(repaint))
+export default after(repaint)
