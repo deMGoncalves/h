@@ -5,6 +5,7 @@ const magic = f.magic('reflow')
 const reflow = (tag) =>
   f.assign(tag, {
     [magic]: (newTag) => {
+      tag.attributes[magic](newTag.attributes)
       tag.children[magic](newTag.children)
     }
   })
