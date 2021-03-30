@@ -1,4 +1,5 @@
 import * as f from 'f'
+import flatten from './flatten'
 import paint from './paint'
 
 @paint
@@ -20,10 +21,7 @@ class ClassName {
   }
 
   static create (props, target) {
-    return new ClassName(
-      f.join(f.flatten(f.concat([], f.or(props.className, []))), ' '),
-      target
-    )
+    return new ClassName(flatten(props), target)
   }
 }
 
