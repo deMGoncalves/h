@@ -1,10 +1,10 @@
 import * as f from 'f'
 
-export default (target, entity) =>
+export default (entity) =>
   new Proxy(
-    target,
+    entity,
     {
-      get: (_target, key) => f.is(Function, entity[key]) ? entity[key].bind(entity) : entity[key],
-      set: (_target, key, value) => f.T(entity[key] = value)
+      get: (target, key) => f.is(Function, target[key]) ? target[key].bind(target) : target[key],
+      set: (target, key, value) => f.T(target[key] = value)
     }
   )
