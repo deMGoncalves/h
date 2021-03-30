@@ -3,6 +3,6 @@ import { after } from 'hook'
 import dom from '@/dom'
 
 const repaint = (text) =>
-  ((dom.query(text.id).textContent = text.content), text)
+  f.always(text)(dom.query(text.id).textContent = text.content)
 
 export default after(f.frame(repaint))
