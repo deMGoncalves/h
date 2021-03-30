@@ -1,10 +1,8 @@
 import * as f from 'f'
 import Text from '@/text'
-import reflow from './reflow'
 import render from './render'
 
 @render
-@reflow
 class Children {
   #list
   #parent
@@ -20,6 +18,14 @@ class Children {
   constructor (list, parent) {
     this.#list = list
     this.#parent = parent
+  }
+
+  reflow (other) {
+    f.forEach(
+      f.zip(this.list, other.list),
+      ([child, otherChild]) => child.reflow(otherChild)
+    )
+    return this
   }
 
   static create (list, parent) {
