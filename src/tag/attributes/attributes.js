@@ -1,5 +1,6 @@
 import * as f from 'f'
 import paint from './paint'
+import repaint from './repaint'
 
 @paint
 class Attributes {
@@ -20,15 +21,31 @@ class Attributes {
   }
 
   reflow (other) {
+    f.forEach(
+      f.zip(this.list, other.list),
+      ([attribute, otherAttribute]) => (
+        f.and(
+          f.equal(attribute.key, otherAttribute.key),
+          f.different(attribute.value, otherAttribute.value)
+        ) && this.setAttribute(attribute.key, otherAttribute.value),
+
+        f.different(attribute.key, otherAttribute.key) && (
+          this.removeAttribute(attributes.key),
+          this.setAttribute(otherAttribute.key, otherAttribute.value)
+        )
+      )
+    )
     return this
   }
 
-  remove (key) {
+  @repaint
+  removeAttribute (key) {
     this.#list.remove(key)
     return this
   }
 
-  set (key, value) {
+  @repaint
+  setAttribute (key, value) {
     this.#list.set(key, value)
     return this
   }
