@@ -28,11 +28,11 @@ class Attributes {
         f.and(
           f.equal(attribute.key, otherAttribute.key),
           f.different(attribute.value, otherAttribute.value)
-        ) && this.setAttribute(attribute.key, otherAttribute.value),
+        ) && this.setKey(attribute.key, otherAttribute.value),
 
         f.different(attribute.key, otherAttribute.key) && (
           this.removeKey(attributes.key),
-          this.setAttribute(otherAttribute.key, otherAttribute.value)
+          this.setKey(otherAttribute.key, otherAttribute.value)
         )
       )
     )
@@ -46,7 +46,7 @@ class Attributes {
   }
 
   @repaint
-  setAttribute (key, value) {
+  setKey (key, value) {
     this.#map.set(key, value)
     return this
   }
