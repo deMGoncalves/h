@@ -29,13 +29,13 @@ class Attributes {
   }
 
   @repaint
-  removeKey (key) {
+  removeItem (key) {
     this.#map.remove(key)
     return this
   }
 
   @repaint
-  setKey (key, value) {
+  setItem (key, value) {
     if(f.and(key, value))
       this.#map.set(key, value)
     return this
