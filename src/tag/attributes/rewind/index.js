@@ -1,1 +1,1 @@
-export { default } from './compare'
+export { default } from './rewind'
