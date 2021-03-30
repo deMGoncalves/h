@@ -1,4 +1,5 @@
 import * as f from 'f'
+import convertToList from './convertToList'
 import mapper from './mapper'
 import paint from './paint'
 import repaint from './repaint'
@@ -9,7 +10,7 @@ class Attributes {
   #parent
 
   get list () {
-    return f.map([...this.#map], ([key, value]) => ({ key, value }))
+    return convertToList(this.#map)
   }
 
   get parent () {
