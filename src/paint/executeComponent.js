@@ -7,7 +7,7 @@ export default function (componentRef, entity, children) {
 
   f.assign(entity, {
     [f.magic('reflow')]: () =>
-      element[f.magic('reflow')](componentRef(props, children))
+      element.reflow(componentRef(props, children))
   })
 
   return element
