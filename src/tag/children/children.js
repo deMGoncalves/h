@@ -1,8 +1,8 @@
 import * as f from 'f'
 import Text from '@/text'
-import render from './render'
+import paint from './paint'
 
-@render
+@paint
 class Children {
   #list
   #parent
