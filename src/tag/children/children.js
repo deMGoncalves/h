@@ -8,7 +8,7 @@ class Children {
   #target
 
   get list () {
-    return this.#list
+    return [...this.#list]
   }
 
   get target () {
@@ -20,8 +20,13 @@ class Children {
     this.#target = target
   }
 
-  append (child) {
-    this.#list.push(child)
+  append (other) {
+    this.#list.push(other)
+    return this
+  }
+
+  replace (current, other) {
+    f.splice(f.indexOf(this.#list, current), 1, other)
     return this
   }
 
@@ -30,6 +35,11 @@ class Children {
       f.zip(this.list, other.list),
       ([child, otherChild]) => child.reflow(otherChild)
     )
+    return this
+  }
+
+  remove (current) {
+    f.splice(f.indexOf(this.#list, current), 1)
     return this
   }
 
