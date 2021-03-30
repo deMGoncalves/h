@@ -29,8 +29,14 @@ class Text {
   }
 
   @repaint
-  changeContent (newContent) {
-    this.#content = newContent
+  changeContent (content) {
+    this.#content = content
+    return this
+  }
+  
+  reflow (other) {
+    if (f.different(this.content, other.content))
+      this.changeContent(other.content)
     return this
   }
 
