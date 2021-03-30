@@ -3,11 +3,9 @@ import Attributes from './attributes'
 import Children from './children'
 import ClassName from './className'
 import Events from './events'
-import reflow from './reflow'
 import render from './render'
 
 @render
-@reflow
 class Tag {
   #attributes
   #children
@@ -64,6 +62,10 @@ class Tag {
     this.#is = props.is
     this.#slot = props.slot
     this.#tagName = tagName
+  }
+
+  reflow (other) {
+    return this
   }
 
   setParent (parent) {
