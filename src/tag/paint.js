@@ -13,7 +13,7 @@ const paint = (tag) =>
       tag.className[magic](element)
       tag.events[magic](element)
 
-      return dom.append(element)
+      return dom.append(tag.id, element)
     }
   })
 
