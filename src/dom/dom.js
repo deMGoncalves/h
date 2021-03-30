@@ -1,10 +1,9 @@
-import * as f from 'f'
+import append from './append'
+import query from './query'
+import remove from './remove'
 
-const map = new Map()
-const dom = {
-  remove: (id) => map.delete(id),
-  query: (id) => f.or(map.get(id), {}),
-  append: (id, tagOrText) => (map.set(id, tagOrText), tagOrText)
+export default {
+  append,
+  query,
+  remove
 }
-
-export default dom
