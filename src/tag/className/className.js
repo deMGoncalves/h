@@ -20,6 +20,17 @@ class ClassName {
     this.#value = value
   }
 
+  changeValue (value) {
+    this.#value = value
+    return this
+  }
+
+  reflow (other) {
+    if (f.different(this.#value, other.value))
+      this.changeValue(other.value)
+    return this
+  }
+
   static create (props, target) {
     return new ClassName(flatten(props), target)
   }
