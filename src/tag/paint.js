@@ -1,8 +1,8 @@
 import * as f from 'f'
 import hook from 'hook'
 
-const magic = f.magic('render')
-const render = (tag) =>
+const magic = f.magic('paint')
+const paint = (tag) =>
   f.assign(tag, {
     [magic]: () => {
       const element = document.createElement(tag.tagName, { is: tag.is })
@@ -16,4 +16,4 @@ const render = (tag) =>
     }
   })
 
-export default hook(render)
+export default hook(paint)

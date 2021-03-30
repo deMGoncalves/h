@@ -3,9 +3,9 @@ import Attributes from './attributes'
 import Children from './children'
 import ClassName from './className'
 import Events from './events'
-import render from './render'
+import paint from './paint'
 
-@render
+@paint
 class Tag {
   #attributes
   #children
