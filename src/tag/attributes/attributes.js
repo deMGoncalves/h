@@ -5,19 +5,19 @@ import repaint from './repaint'
 
 @paint
 class Attributes {
-  #list
+  #map
   #parent
 
   get list () {
-    return f.map([...this.#list], ([key, value]) => ({ key, value }))
+    return f.map([...this.#map], ([key, value]) => ({ key, value }))
   }
 
   get parent () {
     return this.#parent
   }
 
-  constructor (list, parent) {
-    this.#list = list
+  constructor (map, parent) {
+    this.#map = map
     this.#parent = parent
   }
 
@@ -41,13 +41,13 @@ class Attributes {
 
   @repaint
   removeAttribute (key) {
-    this.#list.remove(key)
+    this.#map.remove(key)
     return this
   }
 
   @repaint
   setAttribute (key, value) {
-    this.#list.set(key, value)
+    this.#map.set(key, value)
     return this
   }
 
