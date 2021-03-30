@@ -1,8 +1,9 @@
-import * as f from 'f'
-import add from './add'
+import append from './append'
 import mapper from './mapper'
 import paint from './paint'
+import remove from './remove'
 import repaint from './repaint'
+import replace from './replace'
 import rewind from './rewind'
 
 @paint
@@ -25,13 +26,13 @@ class Children {
 
   @repaint
   append (child) {
-    add(this.#list, child)
+    append(this.#list, child)
     return this
   }
 
   @repaint
   replace (child, other) {
-    f.splice(f.indexOf(this.#list, child), 1, other)
+    replace(this.#list, child, other)
     return this
   }
 
@@ -42,7 +43,7 @@ class Children {
 
   @repaint
   remove (child) {
-    f.splice(f.indexOf(this.#list, child), 1)
+    remove(this.#list, child)
     return this
   }
 
