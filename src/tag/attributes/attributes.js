@@ -31,7 +31,7 @@ class Attributes {
         ) && this.setAttribute(attribute.key, otherAttribute.value),
 
         f.different(attribute.key, otherAttribute.key) && (
-          this.removeAttribute(attributes.key),
+          this.removeKey(attributes.key),
           this.setAttribute(otherAttribute.key, otherAttribute.value)
         )
       )
@@ -40,7 +40,7 @@ class Attributes {
   }
 
   @repaint
-  removeAttribute (key) {
+  removeKey (key) {
     this.#map.remove(key)
     return this
   }
