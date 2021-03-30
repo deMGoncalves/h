@@ -15,7 +15,7 @@ class Tag {
   #is
   #parent
   #slot
-  #tagName
+  #name
 
   get attributes () {
     return this.#attributes
@@ -41,16 +41,16 @@ class Tag {
     return this.#is
   }
 
+  get name () {
+    return this.#name
+  }
+
   get parent () {
     return this.#parent
   }
 
   get slot () {
     return this.#slot
-  }
-
-  get tagName () {
-    return this.#tagName
   }
 
   constructor (tagName, props, children) {
@@ -60,8 +60,8 @@ class Tag {
     this.#events = Events.create(props, this)
     this.#id = Symbol()
     this.#is = props.is
+    this.#name = tagName
     this.#slot = props.slot
-    this.#tagName = tagName
   }
 
   reflow (other) {
@@ -77,8 +77,8 @@ class Tag {
     return new Tag(tagName, props, children)
   }
 
-  static is (tagNameOrComponent) {
-    return f.is(String, tagNameOrComponent)
+  static is (nameOrComponent) {
+    return f.is(String, nameOrComponent)
   }
 }
 

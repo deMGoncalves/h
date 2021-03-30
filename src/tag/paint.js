@@ -5,7 +5,7 @@ const magic = f.magic('paint')
 const paint = (tag) =>
   f.assign(tag, {
     [magic]: () => {
-      const element = document.createElement(tag.tagName, { is: tag.is })
+      const element = document.createElement(tag.name, { is: tag.is })
 
       tag.attributes[magic](element)
       tag.children[magic](element)
