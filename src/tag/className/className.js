@@ -1,6 +1,7 @@
 import * as f from 'f'
 import flatten from './flatten'
 import paint from './paint'
+import repaint from './repaint'
 
 @paint
 class ClassName {
@@ -20,13 +21,14 @@ class ClassName {
     this.#value = value
   }
 
+  @repaint
   changeValue (value) {
     this.#value = value
     return this
   }
 
   reflow (other) {
-    if (f.different(this.#value, other.value))
+    if (f.different(this.value, other.value))
       this.changeValue(other.value)
     return this
   }
