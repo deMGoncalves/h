@@ -67,6 +67,7 @@ class Tag {
   reflow (other) {
     this.attributes.reflow(other.attributes)
     this.children.reflow(other.children)
+    this.className.reflow(other.className)
     return this
   }
 
