@@ -1,6 +1,7 @@
 import * as f from 'f'
 import mapper from './mapper'
 import paint from './paint'
+import rewind from './rewind'
 
 @paint
 class Children {
@@ -31,10 +32,7 @@ class Children {
   }
 
   reflow (other) {
-    f.forEach(
-      f.zip(this.list, other.list),
-      ([child, otherChild]) => child.reflow(otherChild)
-    )
+    rewind(this, other)
     return this
   }
 

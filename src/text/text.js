@@ -16,6 +16,10 @@ class Text {
     return this.#id
   }
 
+  get name () {
+    return '#text'
+  }
+
   get parent () {
     return this.#parent
   }

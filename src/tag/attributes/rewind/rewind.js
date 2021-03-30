@@ -6,13 +6,13 @@ import extend from './extend'
 import removed from './removed'
 import restrict from './restrict'
 
-export default (current, other) =>
+export default (attributes, other) =>
   f.forEach(
-    f.zip(current.list, other.list),
+    f.zip(attributes.list, other.list),
     f.apply(f.cond(
-      [added, extend(current)],
-      [removed, restrict(current)],
-      [changed, extend(current)],
-      [different, restrict(current)]
+      [added, extend(attributes)],
+      [removed, restrict(attributes)],
+      [changed, extend(attributes)],
+      [different, restrict(attributes)]
     ))
   )

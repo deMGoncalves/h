@@ -1,7 +1,7 @@
 import * as f from 'f'
 
-const restrict = (attributes, current, other = {}) =>
-  attributes
+const restrict = (events, current, other = {}) =>
+  events
     .removeItem(current.name)
     .setItem(other.name, other.listener)
 
