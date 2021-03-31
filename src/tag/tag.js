@@ -3,6 +3,7 @@ import Attributes from './attributes'
 import Children from './children'
 import ClassName from './className'
 import Events from './events'
+import notCustomElement from './notCustomElement'
 import paint from './paint'
 import rewind from './rewind'
 
@@ -66,6 +67,9 @@ class Tag {
 
   reflow (other) {
     rewind(this, other)
+    notCustomElement(this) && (
+      this.children.reflow(other.children)
+    )
     return this
   }
 
