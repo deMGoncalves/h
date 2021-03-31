@@ -28,14 +28,12 @@ class Children {
 
   @repaint.append
   append (other) {
-    other.setParent(this.target)
     f.push(this.list, other)
     return this
   }
 
   @repaint.replace
   replace (child, other) {
-    other.setParent(this.target)
     f.splice(this.list, f.indexOf(this.list, child), 1, other)
     return this
   }

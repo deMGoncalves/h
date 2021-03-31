@@ -2,8 +2,9 @@ import * as f from 'f'
 import { before } from 'hook'
 import dom from '@/dom'
 
-const append = function (other) {
+function append (other) {
   dom.query(this.last.id).insertAdjacentElement('afterend', other[f.magic('paint')]())
+  return [other]
 }
 
 export default before(append)
