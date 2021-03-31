@@ -14,7 +14,6 @@ class Tag {
   #events
   #id
   #is
-  #parent
   #slot
   #name
 
@@ -46,10 +45,6 @@ class Tag {
     return this.#name
   }
 
-  get parent () {
-    return this.#parent
-  }
-
   get slot () {
     return this.#slot
   }
@@ -60,7 +55,7 @@ class Tag {
 
   constructor (tagName, props, children) {
     this.#attributes = Attributes.create(props, this)
-    this.#children = Children.create(children, this)
+    this.#children = Children.create(children)
     this.#className = ClassName.create(props, this)
     this.#events = Events.create(props, this)
     this.#id = Symbol(tagName)
@@ -71,11 +66,6 @@ class Tag {
 
   reflow (other) {
     rewind(this, other)
-    return this
-  }
-
-  setParent (parent) {
-    this.#parent = parent
     return this
   }
 

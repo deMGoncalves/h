@@ -5,7 +5,6 @@ import paint from './paint'
 class Fragment {
   #children
   #id
-  #parent
   #slot
 
   get children () {
@@ -20,10 +19,6 @@ class Fragment {
     return '#fragmanet'
   }
 
-  get parent () {
-    return this.#parent
-  }
-
   get slot () {
     return this.#slot
   }
@@ -33,18 +28,13 @@ class Fragment {
   }
 
   constructor (props, children) {
-    this.#children = Children.create(children, this)
+    this.#children = Children.create(children)
     this.#id = Symbol(this.name)
     this.#slot = props.slot
   }
 
   reflow (other) {
     this.children.reflow(other.children)
-    return this
-  }
-
-  setParent (parent) {
-    this.#parent = parent
     return this
   }
 

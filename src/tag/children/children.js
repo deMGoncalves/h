@@ -7,7 +7,6 @@ import rewind from './rewind'
 @paint
 class Children {
   #list
-  #target
 
   get last () {
     return this.list[f.dec(f.len(this.list))]
@@ -17,13 +16,8 @@ class Children {
     return this.#list
   }
 
-  get target () {
-    return this.#target
-  }
-
-  constructor (list, target) {
+  constructor (list) {
     this.#list = list
-    this.#target = target
   }
 
   @repaint.append
@@ -49,8 +43,8 @@ class Children {
     return this
   }
 
-  static create (list, target) {
-    return new Children(mapper(list), target)
+  static create (list) {
+    return new Children(mapper(list))
   }
 }
 

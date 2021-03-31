@@ -6,7 +6,6 @@ import repaint from './repaint'
 class Text {
   #content
   #id
-  #parent
 
   get content () {
     return this.#content
@@ -20,18 +19,13 @@ class Text {
     return '#text'
   }
 
-  get parent () {
-    return this.#parent
-  }
-
   get type () {
     return 3
   }
 
-  constructor (content, parent) {
+  constructor (content) {
     this.#content = content
     this.#id = Symbol(this.name)
-    this.#parent = parent
   }
 
   @repaint
@@ -47,8 +41,8 @@ class Text {
     return this
   }
 
-  static create (content, parent) {
-    return new Text(content, parent)
+  static create (content) {
+    return new Text(content)
   }
 
   static is (textOrTag) {

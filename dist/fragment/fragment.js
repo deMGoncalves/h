@@ -17,7 +17,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     }
     return privateMap.get(receiver);
 };
-var _children, _id, _parent, _slot;
+var _children, _id, _slot;
 var Fragment_1;
 import Children from "../tag/children/index";
 import paint from "./paint";
@@ -25,9 +25,8 @@ let Fragment = Fragment_1 = class Fragment {
     constructor(props, children) {
         _children.set(this, void 0);
         _id.set(this, void 0);
-        _parent.set(this, void 0);
         _slot.set(this, void 0);
-        __classPrivateFieldSet(this, _children, Children.create(children, this));
+        __classPrivateFieldSet(this, _children, Children.create(children));
         __classPrivateFieldSet(this, _id, Symbol(this.name));
         __classPrivateFieldSet(this, _slot, props.slot);
     }
@@ -40,9 +39,6 @@ let Fragment = Fragment_1 = class Fragment {
     get name() {
         return '#fragmanet';
     }
-    get parent() {
-        return __classPrivateFieldGet(this, _parent);
-    }
     get slot() {
         return __classPrivateFieldGet(this, _slot);
     }
@@ -53,15 +49,11 @@ let Fragment = Fragment_1 = class Fragment {
         this.children.reflow(other.children);
         return this;
     }
-    setParent(parent) {
-        __classPrivateFieldSet(this, _parent, parent);
-        return this;
-    }
     static execute(props, children) {
         return new Fragment_1(props, children);
     }
 };
-_children = new WeakMap(), _id = new WeakMap(), _parent = new WeakMap(), _slot = new WeakMap();
+_children = new WeakMap(), _id = new WeakMap(), _slot = new WeakMap();
 Fragment = Fragment_1 = __decorate([
     paint
 ], Fragment);
