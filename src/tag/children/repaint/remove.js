@@ -1,4 +1,7 @@
+import { before } from 'hook'
 import dom from '@/dom'
 
-export default (_children, child) =>
+const remove = (child) =>
   dom.query(child.id).remove()
+
+export default before(remove)

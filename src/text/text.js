@@ -41,7 +41,9 @@ class Text {
   }
 
   reflow (other) {
-    if (f.different(this.content, other.content)) { this.changeContent(other.content) }
+    f.different(this.content, other.content) && (
+      this.changeContent(other.content)
+    )
     return this
   }
 

@@ -1,5 +1,8 @@
 import * as f from 'f'
+import { before } from 'hook'
 import dom from '@/dom'
 
-export default (children, child, other) =>
-  dom.query(children.target.id).replaceChild(other[f.magic('paint')](), dom.query(child.id))
+const replace = (child, other) =>
+  dom.query(child.id).parentNode.replaceChild(other[f.magic('paint')](), dom.query(child.id))
+
+export default before(replace)
