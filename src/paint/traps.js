@@ -4,7 +4,7 @@ export default (entity) =>
   new Proxy(
     entity,
     {
-      get: (target, key) => f.is(Function, target[key]) ? target[key].bind(target) : target[key],
-      set: (target, key, value) => f.T(target[key] = value)
+      get: (_target, key) => f.is(Function, entity[key]) ? entity[key].bind(entity) : entity[key],
+      set: (_target, key, value) => f.T(entity[key] = value)
     }
   )

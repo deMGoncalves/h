@@ -50,6 +50,7 @@ let Fragment = Fragment_1 = class Fragment {
         return this;
     }
     static execute(props, children) {
+        console.log('Fragment exexute', props, children.main);
         return new Fragment_1(props, children);
     }
 };
