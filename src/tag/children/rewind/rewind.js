@@ -9,7 +9,6 @@ import removed from './removed'
 import replace from './replace'
 
 export default (children, other) => (
-  console.log('children rewind', children, other),
   f.forEach(
     f.zip(children.list, other.list),
     f.apply(f.cond(
