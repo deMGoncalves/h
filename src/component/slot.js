@@ -2,9 +2,9 @@ import * as f from 'f'
 
 export default (children) =>
   new Proxy(
-    f.filter(children, f.compose(f.not, f.has('slot'))),
+    children,
     {
       get: (target, slotName) =>
-        f.or(target[slotName], f.filter(children, f.compose(f.equal(slotName), f.prop('slot'))))
+        f.or(target[slotName], f.filter(target, f.compose(f.equal(slotName), f.prop('slot'))))
     }
   )
