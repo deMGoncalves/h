@@ -29,8 +29,8 @@ class Children {
   }
 
   @repaint.replace
-  replace (child, other) {
-    f.splice(this.list, f.indexOf(this.list, child), 1, other)
+  replace (current, other) {
+    f.splice(this.list, f.indexOf(this.list, current), 1, other)
     return this
   }
 
