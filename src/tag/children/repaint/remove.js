@@ -1,9 +1,9 @@
 import { before } from 'hook'
 import dom from '@/dom'
 
-function remove (child) {
-  dom.query(child.id).remove()
-  return [child]
+function remove (current) {
+  dom.query(current.id).remove()
+  return [current]
 }
 
 export default before(remove)
