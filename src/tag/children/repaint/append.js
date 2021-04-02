@@ -3,7 +3,7 @@ import { before } from 'hook'
 import dom from '@/dom'
 
 function append (other) {
-  dom.query(this.last.id).insertAdjacentElement('afterend', other[f.magic('paint')]())
+  dom.query(this.target.id).append('afterend', other[f.magic('paint')]())
   return [other]
 }
 
