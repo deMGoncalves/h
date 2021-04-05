@@ -3,7 +3,6 @@ import paint from './paint'
 @paint
 class Comment {
   #id
-  #slot
 
   get id () {
     return this.#id
@@ -11,10 +10,6 @@ class Comment {
 
   get name () {
     return '#comment'
-  }
-
-  get slot () {
-    return this.#slot
   }
 
   get type () {

@@ -1,5 +1,5 @@
 import h from "../h";
-import Fragment from "../fragment/index";
+import Comment from "../comment/index";
 export default (props, children) => props.if
-    ? h(Fragment, null)
+    ? h(Comment, null)
     : children;
